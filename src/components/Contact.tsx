@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { Mail, Linkedin, MapPin } from 'lucide-react';
 
+// Netlify requires a hidden version of the form for build-time detection
+const NetlifyFormDetection = () => (
+  <form name="contact" data-netlify="true" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message" />
+  </form>
+);
+
 export const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
@@ -21,6 +30,9 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
+      {/* Hidden form for Netlify form detection */}
+      <NetlifyFormDetection />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Let's Connect</h2>
@@ -31,13 +43,14 @@ export const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Contact Info */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
               Whether you're looking for a passionate data scientist, have an exciting project in mind, 
               or want to collaborate on AI/ML initiatives, I'd love to hear from you.
             </p>
-            
+
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="bg-gray-900 p-3 rounded-lg">
@@ -50,19 +63,24 @@ export const Contact = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="bg-gray-900 p-3 rounded-lg">
                   <Linkedin className="text-white" size={20} />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">LinkedIn</p>
-                  <a href="https://www.linkedin.com/in/shriya-pachunuri/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
+                  <a
+                    href="https://www.linkedin.com/in/shriya-pachunuri/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
                     Connect with me
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="bg-gray-900 p-3 rounded-lg">
                   <MapPin className="text-white" size={20} />
@@ -75,11 +93,12 @@ export const Contact = () => {
             </div>
           </div>
 
+          {/* Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
             <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Message</h3>
 
             {submitted ? (
-              <p className="text-gray-600 font-medium text-center">
+              <p className="text-green-600 font-medium text-center">
                 ✅ Thank you! Your message has been sent.
               </p>
             ) : (
@@ -92,9 +111,7 @@ export const Contact = () => {
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
-                  <label>
-                    Don’t fill this out if you're human: <input name="bot-field" />
-                  </label>
+                  <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
                 </p>
 
                 <div className="mb-4">
