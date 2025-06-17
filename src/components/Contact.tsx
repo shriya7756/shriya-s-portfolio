@@ -29,7 +29,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
-                  <a href="mailto:shriya.pachunuri@example.com" className="text-gray-600 hover:text-gray-900">
+                  <a href="mailto:shriyapachunuri1105@gmail.com" className="text-gray-600 hover:text-gray-900">
                     shriyapachunuri1105@gamil.com
                   </a>
                 </div>
