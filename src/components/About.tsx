@@ -16,13 +16,14 @@ export const About = () => {
       
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               I like to build solutions that actually help. For me, a good project starts with clear 
-              inspiration and ends with something solid, thoughtful, and functional.
-
-              I care about building what matters. I’m passionate about solving meaningful problems, 
+              inspiration and ends with something solid, thoughtful, and functional. Hence, I care about 
+              building what matters. 
+              <br />
+              I’m passionate about solving meaningful problems, 
               and I believe the best work comes from a mix of creativity, focus, and a bit of 
               stubbornness to get things right.
             </p>
-            
+           
             <div className="grid gap-6">
               <div className="flex items-start gap-4">
                 <div className="bg-gray-900 p-3 rounded-lg">
