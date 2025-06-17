@@ -4,6 +4,21 @@ import { Mail, Linkedin, MapPin } from 'lucide-react';
 export const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch((error) => alert(error));
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,8 +88,7 @@ export const Contact = () => {
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                onSubmit={() => setSubmitted(true)}
-                className="space-y-4"
+                onSubmit={handleSubmit}
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
@@ -83,7 +97,7 @@ export const Contact = () => {
                   </label>
                 </p>
 
-                <div>
+                <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                   <input
                     name="name"
@@ -94,7 +108,7 @@ export const Contact = () => {
                   />
                 </div>
 
-                <div>
+                <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input
                     name="email"
@@ -105,7 +119,7 @@ export const Contact = () => {
                   />
                 </div>
 
-                <div>
+                <div className="mb-6">
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
                     name="message"
