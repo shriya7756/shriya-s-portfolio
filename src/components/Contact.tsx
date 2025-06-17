@@ -1,38 +1,35 @@
 import React, { useState } from 'react';
 import { Mail, Linkedin, MapPin } from 'lucide-react';
 
-// Netlify requires a hidden version of the form for build-time detection
-const NetlifyFormDetection = () => (
-  <form name="contact" data-netlify="true" hidden>
-    <input type="text" name="name" />
-    <input type="email" name="email" />
-    <textarea name="message" />
-  </form>
-);
-
 export const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
-    })
-      .then(() => setSubmitted(true))
-      .catch((error) => alert(error));
+    try {
+      const response = await fetch('https://formspree.io/f/xzzgvedv', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        alert('Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      alert('Error sending message.');
+    }
   };
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
-      {/* Hidden form for Netlify form detection */}
-      <NetlifyFormDetection />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Let's Connect</h2>
@@ -102,18 +99,7 @@ export const Contact = () => {
                 ✅ Thank you! Your message has been sent.
               </p>
             ) : (
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
-                  <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-                </p>
-
+              <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                   <input
