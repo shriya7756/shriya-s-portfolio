@@ -79,7 +79,7 @@ export const Contact = () => {
             <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Message</h3>
 
             {submitted ? (
-              <p className="text-green-600 font-medium text-center">
+              <p className="text-gray-600 font-medium text-center">
                 ✅ Thank you! Your message has been sent.
               </p>
             ) : (
