@@ -146,7 +146,7 @@ export const Contact = () => {
 
         <div className="text-center mt-16 pt-8 border-t border-gray-200">
           <p className="text-gray-600">
-            © 2025 Shriya Pachunuri. Built with passion for technology and innovation.
+            © 2025 Shriya Pachunuri. Built with passion for creativity, innovation and technology.
           </p>
         </div>
       </div>
