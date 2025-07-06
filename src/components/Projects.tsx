@@ -35,7 +35,7 @@ export const Projects = () => {
         "Built a personal journal web app with media-rich entries, event calendar,  budget tracker, a secure login, media uploads, and responsive UI.",
         "Deployed on Vercel with GitHub CI/CD"
       ],
-      projectLink: "https://jpmc-stats.netlify.app/"
+      projectLink: "https://shriyapachunuri-mind-scribe.vercel.app/"
     },
     {
       title: "CBIT JPMC Hiring Trends Analysis",
