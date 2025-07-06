@@ -32,7 +32,7 @@ export const Projects = () => {
       period: "June 2025",
       description: "A full-stack personal journaling web app built using MERN.",
       highlights: [
-        "Built a personal journal web app with media-rich entries, event calendar,  budget tracker, a secure login, media uploads, and responsive UI.",
+        "Built a personal journal web app with media-rich entries, event calendar, budget tracker, a secure login, media uploads, and responsive UI.",
         "Deployed on Vercel with GitHub CI/CD"
       ],
       projectLink: "https://shriyapachunuri-mind-scribe.vercel.app/"
@@ -101,7 +101,7 @@ export const Projects = () => {
               <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
 
               <ul className="space-y-2 mb-6">
-                {project.highlights.map((highlight, idx) => (
+                {project.highlights?.map((highlight, idx) => (
                   <li key={idx} className="text-sm text-gray-600 flex items-start">
                     <span className="text-gray-400 mr-2">•</span>
                     {highlight}
