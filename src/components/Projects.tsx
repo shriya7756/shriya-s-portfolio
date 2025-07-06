@@ -27,6 +27,17 @@ export const Projects = () => {
       codeLink: "https://github.com/shriya7756/fastapi-object-detection"
     },
     {
+      title: "mindScribe",
+      tech: "MERN",
+      period: "June 2025",
+      description: "A full-stack personal journaling web app built using MERN.",
+      highlights: [
+        "Built a personal journal web app with media-rich entries, event calendar,  budget tracker, a secure login, media uploads, and responsive UI.",
+        "Deployed on Vercel with GitHub CI/CD"
+      ],
+      projectLink: "https://jpmc-stats.netlify.app/"
+    },
+    {
       title: "CBIT JPMC Hiring Trends Analysis",
       tech: "Power BI, HTML, CSS",
       period: "March 2025",

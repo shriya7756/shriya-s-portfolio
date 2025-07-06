@@ -4,29 +4,17 @@ import { Briefcase, Calendar } from 'lucide-react';
 export const Experience = () => {
   const experiences = [
     {
-      title: "Joint Secretary",
-      company: "Ramanujan Maths Club (RMC)",
-      period: "April 2025 – Present",
-      description: "Organized impactful events and played a key role in scalable initiatives by leveraging strong problem-solving and leadership skills, ensuring smooth execution and meaningful outcomes even in dynamic and uncertain environments."
-    },
-    {
-      title: "Content Associate",
-      company: "Ramanujan Maths Club (RMC)",
-      period: "May 2024 - April 2025",
-      description: "Collaborated in a dynamic work environment to develop and deploy high-quality content solutions, enhancing engagement through analytical problem-solving and effective communication."
-    },
-    {
-      title: "ACHIEVEMENTS",
-      company: "AlgoUniversity",
+      title: "AI Developer Intern - Summer of AI ",
+      company: "Viswam.AI, Swecha Telangana",
       period: "June 2025",
-      description: "Selected  from over 3000+ profiles for AlgoUniversity’s Accelerator Camp (YC-backed), focused on accelerating top tech talent."}
+      description: "Viswam.AI, Swecha Telangana"}
   ];
 
   return (
     <section id="experience" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Leadership and Extra-curriculars</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Professional Experience</h2>
           <div className="w-20 h-1 bg-gray-900 mx-auto"></div>
         </div>
 
