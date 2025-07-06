@@ -1,13 +1,14 @@
 import React from 'react';
 import { Briefcase, Calendar } from 'lucide-react';
 
-export const work = () => {
+const Work = () => {
   const works = [
     {
-      title: "AI Developer Intern - Summer of AI ",
+      title: "AI Developer Intern - Summer of AI",
       company: "Viswam.AI, Swecha Telangana",
       period: "June 2025",
-      description: "Viswam.AI, Swecha Telangana"}
+      description: "Selected for a competitive program to build and deploy real-world AI applications using Python, DevOps, and fine-tuned models."
+    }
   ];
 
   return (
@@ -49,3 +50,5 @@ export const work = () => {
     </section>
   );
 };
+
+export default Work;
