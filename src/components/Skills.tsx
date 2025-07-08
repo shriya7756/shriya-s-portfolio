@@ -17,7 +17,7 @@ export const Skills = () => {
     {
       title: "AI/ML & Data Science",
       icon: Brain,
-      skills: ["Machine Learning (ML)", "Object Detection", "Image Processing", "Generative AI", "Large Language Models (LLM)", "Computer Vision", "Deep Learning"]
+      skills: ["Machine Learning (ML)", "Object Detection", "Image Processing", "Generative AI", "Large Language Models (LLM)", "Computer Vision"]
     },
     {
       title: "Databases & Tools",
